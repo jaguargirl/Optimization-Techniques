@@ -22,7 +22,7 @@ def trH(n, x):
         ax.quiver(PvX[0], PvX[1], scale=1, units='xy', color="green")
         ax.axis([-7, 7, -7, 7])
         ax.legend(["x", "v", "PvX"])
-        plt.title("Transformarea Householder, n=2")
+        plt.title("Householder transformation, n=2")
     else:
         fig = plt.figure()
         ax = fig.gca(projection='3d')
@@ -30,7 +30,7 @@ def trH(n, x):
         ax.quiver(0, 0, 0, v[0], v[1], v[2], length=0.1, normalize=True, color="purple")
         ax.quiver(0, 0, 0, PvX[0], PvX[1], PvX[2], length=0.1, normalize=True, color="green")
         ax.legend(["x", "v", "PvX"])
-        plt.title("Transformarea Householder, n=3")
+        plt.title("Householder transformation, n=3")
     plt.show()
 
 
@@ -57,7 +57,7 @@ def trG(n, x):
         print(jx)
         ax.quiver(jx[0], jx[1], scale=1, units='xy', color="purple")
         ax.legend(["x", "Jx"])
-        plt.title("Transformarea Givens, n=2")
+        plt.title("Givens transformation, n=2")
     else:
         fig = plt.figure()
         ax = fig.gca(projection='3d')
@@ -65,25 +65,25 @@ def trG(n, x):
         jx = np.dot(J, x)
         ax.quiver(0, 0, 0, jx[0], jx[1], jx[2], length=0.1, normalize=True, color="green")
         ax.legend(["x", "jx"])
-        plt.title("Transformarea Givens, n=3")
+        plt.title("Givens transformation, n=3")
         
 
 while True:
-    n = int(input("Introduceti n: "))
+    n = int(input("Give n: "))
     if n != 2 and n != 3:
-        print("n trebuie sa fie 2 sau 3")
+        print("n needs to be 2 or 3")
     else:
         break
 while True:
-    t = input("Introduceti tipul transformarii (H sau G): ")
+    t = input("Give transformation type (H or G): ")
     if t != 'H' and t != 'G':
-        print("Tipul transformarii trebuie sa fie H sau G")
+        print("Transformation type needs to be H or G")
     else:
         break
 
 if n == 2:
     x = np.zeros(n)
-    pct = (input("Introduceti x1 si x2: "))
+    pct = (input("Give x1 si x2: "))
     x[0], x[1] = pct.split(" ")
     if t == "H":
         trH(n, x)
@@ -91,7 +91,7 @@ if n == 2:
         trG(n, x)
 elif n == 3:
     x = np.zeros(n)
-    pct = (input("Introduceti x1, x2 si x3: "))
+    pct = (input("Give x1, x2 si x3: "))
     x[0], x[1], x[2] = pct.split(" ")
     if t == "H":
         trH(n, x)
