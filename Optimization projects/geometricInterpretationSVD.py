@@ -5,7 +5,7 @@ from mpl_toolkits import mplot3d
 from matplotlib import cm
 
 
-def cerc_elipsa():
+def cirle_elipse():
     n = 2
     A = np.random.random((n, n))
     U, s, Vt = np.linalg.svd(A)
@@ -24,8 +24,8 @@ def cerc_elipsa():
     V_ext[:, 1] = np.zeros(2)
     V_ext[:, 2] = Vt.T[:, 1]
     plt.plot(V_ext[0, :], V_ext[1, :], "g-")
-    plt.title("Interpretarea geometrica a teoremei SVD cu n=2")
-    plt.legend(["Cercul unitate", "v1,v2"], loc='upper right')
+    plt.title("Geometric interpretation of SVD theorem with n=2")
+    plt.legend(["Unite circle", "v1,v2"], loc='upper right')
     
     U_tilda = np.zeros((n, n))
     U_tilda[:, 0] = s[0]*U[:, 0]
@@ -46,11 +46,11 @@ def cerc_elipsa():
         y_e[i] = s[1]*math.sin(fi[i])
     
     plt.plot(x_e, y_e, "m-")
-    plt.legend(["v3,v4", "Elipsa"], loc='upper right')
+    plt.legend(["v3,v4", "Elipse"], loc='upper right')
     plt.show()
 
 
-def sfera_elipsoid():
+def sphere_elipsoid():
     n = 3
     # A = np.random.random((n, n))
     #A = np.reshape(np.array([0.7, -0.7, 0, 0, 0, 1, 0.7, 0.7, 0]), (3, 3))
@@ -83,7 +83,7 @@ def sfera_elipsoid():
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('z')
-    plt.title("Interpretarea geometrica a teoremei SVD cu n=3")
+    plt.title("Geometric interpretation of SVD theorem with n=3")
     V_ext = np.zeros((n, n+2))
     V_ext[:, 0] = V[:, 0]
     V_ext[:, 1] = np.zeros(n)
@@ -94,7 +94,7 @@ def sfera_elipsoid():
     fig2 = plt.figure()
     axx = plt.axes(projection='3d')
     axx.plot3D(V_ext[0, :], V_ext[1, :], V_ext[2, :], 'b-')
-    plt.title("v1, v2, v3 ale sferei")
+    plt.title("v1, v2, v3 of the sphere")
     plt.show()
     
     x_e = np.zeros((k, k))
@@ -118,7 +118,7 @@ def sfera_elipsoid():
     ax_e.set_xlabel('x')
     ax_e.set_ylabel('y')
     ax_e.set_zlabel('z')
-    plt.title("Elipsoid nerotit")
+    plt.title("Unrotated elipsoid")
         
     U_tilda = np.zeros((n, n))
     U_tilda[:, 0] = s[0]*U[:, 0]
@@ -134,12 +134,12 @@ def sfera_elipsoid():
     fig = plt.figure()
     axx = plt.axes(projection='3d')
     axx.plot3D(U_ext[0, :], U_ext[1, :], U_ext[2, :], 'g-')
-    plt.title("Axele v1, v2, v3 ale elipsoidului")
+    plt.title("Axele v1, v2, v3 of elipsoid")
     plt.show()
 
     
-n = int(input("Introduceti dimensiunea matricei n= "))
+n = int(input("Give matrix dimension n= "))
 if n == 2:
-    cerc_elipsa()
+    circle_elipse()
 elif n == 3:
-    sfera_elipsoid()
+    sphere_elipsoid()
