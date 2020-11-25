@@ -14,7 +14,7 @@ def onselect(evt):
     else:
         doc = '0'
         doc += str(value[10:11])+'.txt'
-    os.chdir("E:/OneDrive - Universitatea „OVIDIUS”/Univ/Info3/Tehnici de optimizare/bbc_sport")
+    os.chdir("../bbc_sport")
     f = open(doc, "r")
     global det
     det.delete(1.0, 'end')
