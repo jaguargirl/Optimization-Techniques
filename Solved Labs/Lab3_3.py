@@ -38,4 +38,4 @@ ax.set_ylabel('y')
 ax.set_zlabel('z')
 plt.show()
 
-print('Eroare: ', erf)
+print('Error: ', erf)
