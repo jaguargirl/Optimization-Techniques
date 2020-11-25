@@ -2,7 +2,7 @@ import numpy as np
 import random
 
 def ke(a, x, b, k):
-    print("Kazmartz Extins")
+    print("Kazmartz Extended")
     y = b
     for k_i in range(k):
         for j in range(n):
