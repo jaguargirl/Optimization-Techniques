@@ -15,7 +15,7 @@ def search_engine(n, k):
     m = len(d)
     A = np.zeros((m, n))
     files = []
-    directory = "E:/OneDrive - Universitatea „OVIDIUS”/Univ/Info3/Tehnici de optimizare/bbc_sport"
+    directory = "../bbc_sport"
     j = 0
     df = np.zeros(m)
     dl = np.zeros(n)
