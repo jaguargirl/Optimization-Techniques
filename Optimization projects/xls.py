@@ -74,7 +74,7 @@ ax.plot(x_01, y_01, 'm-')
 x_vector = pct
 ke(A_matrix, x_vector, b_vector)
 plt.legend(['h1', 'h2', "x0", "x01", "xls"])
-plt.title("Calculul Xls")
+plt.title("Xls calculation")
 plt.show()
 
 
