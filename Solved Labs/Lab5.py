@@ -10,7 +10,7 @@ def dataSet(n):
     m = len(termeni)
     A = np.zeros((m, n))
     fisiere = []
-    folder = "E:/OneDrive - Universitatea „OVIDIUS”/Univ/Info3/Tehnici de optimizare/dataSet"
+    folder = "../dataSet"
     j = 0
     for file in os.listdir(folder):
         fisiere.append(file)
@@ -28,7 +28,7 @@ def dataSet(n):
     for i in range(r):
         S[i, i] = s[i]
     while True:
-        k = int(input("Introduceti nivelul de trunchiere k= "))
+        k = int(input("Introduce truncated value k= "))
         if k <= r:
             break
 
@@ -47,7 +47,7 @@ def dataSet(n):
             vk[i,j]=Vt[i,j]
     Ak = np.dot(np.dot(uk, sk), vk)
     q = np.zeros((m, 1))
-    cerere = input("Cerere: ")
+    cerere = input("Request: ")
     cuvinte = cerere.split()
     for i in range(len(cuvinte)):
         for j in range(len(t)):
