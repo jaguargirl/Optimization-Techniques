@@ -13,11 +13,11 @@ def eigenvalues_eig(a):
     t0 = t.perf_counter()
     hqb, d = np.linalg.eig(L)
     t1 = t.perf_counter()
-    print("Timpul de executie pentru eig, t=", t1-t0)
+    print("Execution time for eig, t=", t1-t0)
     proiections = np.dot(a, hqb)
     photo = np.reshape(proiections, (112, 92))
     plt.imshow(photo, cmap='gray')
-    title = "Eigenfaces cu eig, timp_ex =" + str(t1 - t0)
+    title = "Eigenfaces with eig, ex_time =" + str(t1 - t0)
     plt.title(title)
     plt.show()
 
@@ -31,10 +31,10 @@ def eigenvalues_svd(a, k):
     components = components[:1]
     comp = components.reshape(112, 92)
     plt.imshow(comp, cmap='gray')
-    title = "Eigenfaces cu TruncatedSVD, k="+str(k)+", timp_ex="+str(t1-t0)
+    title = "Eigenfaces with TruncatedSVD, k="+str(k)+", timp_ex="+str(t1-t0)
     plt.title(title)
     plt.show()
-    print("Timpul de executie pentru svd, cu k=", k, ", t=", t1-t0)
+    print("Execution time for SVD, with k=", k, ", t=", t1-t0)
 
 
 def create_matrix(nr):
