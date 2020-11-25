@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-m = int(input("Introduceti m="))
+m = int(input("Introduce m="))
 b = np.random.random((m, 1))
 t = np.random.random(m)
 n = m-1
@@ -19,6 +19,6 @@ plt.plot(t, b, "ro")
 plt.plot(u, y)
 plt.xlabel("t")
 plt.ylabel("b")
-plt.title("Regresie liniara")
-plt.legend(["Datele noastre", "Curba de regresie"])
+plt.title("Liniar regression")
+plt.legend(["Our data", "Regression curbe"])
 plt.show()
